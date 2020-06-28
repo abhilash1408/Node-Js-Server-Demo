@@ -24,12 +24,15 @@ module.exports = {
             // create mongoose item object
             var item = new Items(data);
             // save the item
-
+            
+            // using promise
             // item.save().then(()=>{
             //     console.log("item saved")
             // },(err)=>{
             //     console.log(err)
             // });
+
+            // using async await
             await item.save()
             // send response to client
             res.status(200).send({message : "item created"})
